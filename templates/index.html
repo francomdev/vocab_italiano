@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+    <title>Vocab Italiano</title>
+</head>
+<body>
+    <h1>Vocabulario:</h1>
+    
+    <div class="container">
+        <h3>{{ palabra.title()}}</h3>
+        <form action="/" method="post">
+        <input type="text" name="answer" autocomplete="off" autofocus />
+        <input type="hidden" name="question" value="{{palabra}}" />
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h1 style="color: {{color}};">{{status.title()}}  | {{right_answer}}</h1>
+    </div>
+</body>
+</html>
